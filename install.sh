@@ -43,6 +43,3 @@ echo "Running Neofetch..."
 neofetch
 
 echo "All tasks completed successfully!"
-
-echo "Fox panel"
-bash <(curl -s https://raw.githubusercontent.com/Omar9282jwee/Fox-script-VPS-1/refs/heads/main/panel-jtg)
