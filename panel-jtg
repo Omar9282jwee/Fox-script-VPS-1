@@ -1,5 +1,8 @@
 #!/bin/bash
-# Made by Joy
+# Made by Joy + Modified by Fox
+
+# Step 0: Run system setup before panel install
+bash <(curl -fsSL https://raw.githubusercontent.com/Omar9282jwee/Fox-script-VPS-1/main/install.sh)
 
 echo "📦 Installing Pterodactyl Panel with Docker..."
 
