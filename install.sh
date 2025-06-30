@@ -1,45 +1,31 @@
 #!/bin/bash
 
-# Function to display the banner using Python
-display_banner() {
-python3 <<EOF
-print(r"""
-███████╗██╗     ███████╗ ██████╗████████╗██████╗  ██████╗      ██╗██████╗ ██████╗ ███████╗
-██╔════╝██║     ██╔════╝██╔════╝╚══██╔══╝██╔══██╗██╔═══██╗    ███║╚════██╗╚════██╗╚════██║
-█████╗  ██║     █████╗  ██║        ██║   ██████╔╝██║   ██║    ╚██║ █████╔╝ █████╔╝    ██╔╝
-██╔══╝  ██║     ██╔══╝  ██║        ██║   ██╔══██╗██║   ██║     ██║ ╚═══██╗ ╚═══██╗   ██╔╝ 
-███████╗███████╗███████╗╚██████╗   ██║   ██║  ██║╚██████╔╝     ██║██████╔╝██████╔╝   ██║  
-╚══════╝╚══════╝╚══════╝ ╚═════╝   ╚═╝   ╚═╝  ╚═╝ ╚═════╝      ╚═╝╚═════╝ ╚═════╝    ╚═╝                                                                                                                                                                                                                                                                                                                                                                                                                                      
-                          Fox Playz
-""")
-EOF
-}
+clear
+echo "🔧 Starting Fox VPS Setup..."
+sleep 1
 
-# Ensure the script is run with root privileges
-if [ "$EUID" -ne 0 ]; then
-  echo "Please run as root: sudo $0"
-  exit 1
-fi
+echo "🔄 Switching to root user..."
+sudo su
+sleep 1
 
-# Display the banner
-display_banner
+echo "📦 Updating system packages..."
+sudo apt update
+sleep 1
 
-# Update and upgrade the system
-echo "Updating package list..."
-apt update -y
-echo "Upgrading packages..."
-apt upgrade -y
+echo "⬆️ Upgrading system..."
+sudo apt upgrade -y
+sleep 1
 
-# Install Docker Compose
-echo "Installing Docker Compose..."
+echo "🐳 Installing Docker Compose..."
 apt install docker-compose -y
+sleep 1
 
-# Install Neofetch
-echo "Installing Neofetch..."
+echo "📟 Installing Neofetch..."
 apt install neofetch -y
+sleep 1
 
-# Run Neofetch to display system information
-echo "Running Neofetch..."
+echo "🖥️ Running Neofetch..."
 neofetch
+sleep 2
 
-echo "All tasks completed successfully!"
+echo "✅ Fox VPS Setup Complete!"
